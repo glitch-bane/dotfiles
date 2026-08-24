@@ -55,7 +55,7 @@ for MODULE in "${MODULES[@]}"; do
     # STOW EACH MODULE INTO THE HOME DIRECTORY (-t ~)
     mkdir "$TARGET"
     echo -e "${GREEN}  -> Stowing $MODULE...${NO_COLOR}"
-    stow -v -R -t "~/.config/$MODULE" "$MODULE"
+    stow -v -R -t "~/.config/$MODULE/" "$MODULE"
 done
 
 echo -e "\n${BLUE}Provisioning Complete! Restart your session to see changes.${NO_COLOR}"
