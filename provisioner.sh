@@ -29,8 +29,6 @@ BACKUP_DIR="$HOME/.dotfiles-backup/$TIMESTAMP"
 MODULES=(
     "hypr"
     "noctalia"
-    "gtk-3.0"
-    "gtk-4.0"
     "btop"
     "qt5ct"
     "qt6ct"
