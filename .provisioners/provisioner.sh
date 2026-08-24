@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 # DEFINE COLORS FOR PRETTY OUTPUT
