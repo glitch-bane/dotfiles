@@ -50,6 +50,7 @@ for MODULE in "${MODULES[@]}"; do
 
         echo -e "${GREEN}  -> Purging $TARGET...${NO_COLOR}"
         rm -rf "$TARGET"
+        mkdir "$TARGET"
     fi
 
     # STOW EACH MODULE INTO THE HOME DIRECTORY (-t ~)
