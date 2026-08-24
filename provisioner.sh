@@ -50,10 +50,10 @@ for MODULE in "${MODULES[@]}"; do
 
         echo -e "${GREEN}  -> Purging $TARGET...${NO_COLOR}"
         rm -rf "$TARGET"
-        mkdir "$TARGET"
     fi
 
     # STOW EACH MODULE INTO THE HOME DIRECTORY (-t ~)
+    mkdir "$TARGET"
     echo -e "${GREEN}  -> Stowing $MODULE...${NO_COLOR}"
     stow -v -R -t "~/.config/$MODULE" "$MODULE"
 done
