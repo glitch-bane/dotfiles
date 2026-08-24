@@ -42,20 +42,20 @@ echo -e "\n${GREEN}Stowing symlink configurations to home directory...${NO_COLOR
 for MODULE in "${MODULES[@]}"; do
 
     TARGET="$HOME/.config/${MODULE}"
-    echo -e "\n${GREEN}Processing $MODULE..."
+    echo -e "\n${GREEN}Processing $MODULE ($TARGET)...${NO_COLOR}"
 
     # BACKUP THE TARGET IF IT EXISTS THEN REMOVE ORIGINAL
-    if [ -e "$TARGET" ]; then
-        echo -e "\n${GREEN}  -> Backing up to $BACKUP_DIR..."
+    if [ -e "$TARGET" ] || [ -L "$TARGET" ]; then
+        echo -e "\n${GREEN}  -> Backing up to $BACKUP_DIR...${NO_COLOR}"
         mkdir -p "$BACKUP_DIR"
         cp -r "$TARGET" "$BACKUP_DIR/"
 
-        echo -e "\n${GREEN}  -> Purging $TARGET..."
+        echo -e "\n${GREEN}  -> Purging $TARGET...${NO_COLOR}"
         rm -rf "$TARGET"
     fi
 
     # STOW EACH MODULE INTO THE HOME DIRECTORY (-t ~)
-    echo -e "\n${GREEN}  -> Stowing $MODULE..."
+    echo -e "\n${GREEN}  -> Stowing $MODULE...${NO_COLOR}"
     stow -v -R -t ~ "$MODULE"
 done
 
