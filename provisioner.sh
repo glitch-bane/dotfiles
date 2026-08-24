@@ -30,8 +30,8 @@ MODULES=(
     "hypr"
     "noctalia"
     "btop"
-    "qt5ct"
     "qt6ct"
+    "qt5ct"
     "uwsm"
 )
 
