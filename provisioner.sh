@@ -22,7 +22,7 @@ echo -e "\n${GREEN}Installing core packages...${NO_COLOR}"
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
 
 # NAVIGATE TO THE SCRIPT DIRECTORY
-cd "$(dirname "$0")/.config" || exit
+cd "$(dirname "$0")/configs" || exit
 
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 BACKUP_DIR="$HOME/.dotfiles-backup/$TIMESTAMP"
