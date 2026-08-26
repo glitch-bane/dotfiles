@@ -43,8 +43,8 @@ hl.config({
             passes = 4,
             special = true,
         },
-	shadow = {
-	    enabled = false
-	}
-    }
+        shadow = {
+            enabled = false
+        }
+    },
 })
