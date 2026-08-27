@@ -9,7 +9,7 @@ This repository contains my personal dotfiles for configuring my flavor of Arch 
 - Linux Distro: **Arch-based Distributions**, *CachyOS*
 - Wayland Compositor: **Hyprland**
 - Desktop Shell: **Noctalia**
-- Login Greeter: **Noctalia Greeter**
+- Login Greeter: **TTY**
 
 ![Screenshot](.github/assets/screenshot-01.png)
 
@@ -25,17 +25,18 @@ This repository contains my personal dotfiles for configuring my flavor of Arch 
 For a barebones CachyOS installation, this project makes a few assumptions:
 - Base CachyOS installed, current ISO version at time of commit: `260809`
 - The Hyprland desktop environment was selected
-- The Noctalia Greeter is used over SDDM
+- The Noctalia Greeter / SDDM are all DESELECTED
 
 <br/>
 
 **Provisioning Instructions:**
 
-This project uses **GNU Stow** to manage dotfiles. Clone this repository in `$HOME`, `~`, or `/home/<NAME>/`, then run the provisioning script. CachyOS pre-installs a configuration, any conflicting directories will be moved to `~/.dotfiles-backup`.
+This project uses **Bare GIT** to manage dotfiles and prevent symlinking issues. This also grants easy differentials against CachyOS' default configuration changes. Clone this repository in your home path's configuration directory `$HOME/.config` after making a backup (move existing directory to prevent conflicts, then migrate any specifics back). Lastly, run the provisioning script.
 
 ```
-git clone https://github.com/glitch-bane/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+mv ~/.config ~/.config-bak
+git clone https://github.com/glitch-bane/dotfiles.git ~/.config
+cd ~/.config/.provisioners
 
 chmod +x ./provisioner.sh
 sudo ./provisioner.sh
@@ -47,13 +48,23 @@ sudo ./provisioner.sh
 **Custom Keybinds:** Keybinds are sourced in `~/.config/hypr/config/keybinds.lua`
 
 - **Mod key**: Windows/Super Key
+- **Change Focus**: `Mod + Directional Arrows`
+- **Move Active Window**: `Mod + Shift + Directional Arrows`
+- **Move Active Window to Workspace**: `Mod + Shift + 1|2|3`
+- **Terminal**: `Mod + Return`
 - **File Manager**: `Mod + e`
+- *Reference Keybinds configuration for a full list...*
 
 <br/>
 
 **Trackpad Gestures:** Gestures are sourced in `~/.config/hypr/config/input.lua`
 
-- **3 Fingers Swipe (L/R)**: Change Workspace
+- **3 Finger Horizontal Swipe**: Change Workspace
+- **3 Finger Downward Swipe**: Active Window Float
+- **3 Finger Upward Swipe**: Active Window Fullscreen
+- **4 Finger Horizontal Swipe**: Change Workspace
+- **4 Finger Downward Swipe**: Open Alacritty Terminal
+- **4 Finger Upward Swipe**: Open Launcher
 
 <br/>
 

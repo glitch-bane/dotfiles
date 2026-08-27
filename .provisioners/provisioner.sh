@@ -14,48 +14,11 @@ sudo -v
 echo -e "${GREEN}Updating system packages...${NO_COLOR}"
 sudo pacman -Syu --noconfirm
 
-# INSTALL CORE PACKAGES AND GNU STOW
-PACKAGES=(
-    "stow"
-)
-echo -e "\n${GREEN}Installing core packages...${NO_COLOR}"
-sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
-
-# NAVIGATE TO THE SCRIPT DIRECTORY
-cd "$(dirname "$0")/configs" || exit
-
-TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-BACKUP_DIR="$HOME/.dotfiles-backup/$TIMESTAMP"
-MODULES=(
-    "hypr"
-    "noctalia"
-    "btop"
-    "qt6ct"
-    "qt5ct"
-    "uwsm"
-)
-
-# SYMLINK DOTFILES USING GNU STOW
-echo -e "\n${GREEN}Stowing symlink configurations to home directory...${NO_COLOR}"
-for MODULE in "${MODULES[@]}"; do
-
-    TARGET="$HOME/.config/${MODULE}"
-    echo -e "\n${GREEN}Processing $MODULE ($TARGET)...${NO_COLOR}"
-
-    # BACKUP THE TARGET IF IT EXISTS THEN REMOVE ORIGINAL
-    if [ -e "$TARGET" ] || [ -L "$TARGET" ] || [ -d "$TARGET" ]; then
-        echo -e "${GREEN}  -> Backing up to $BACKUP_DIR...${NO_COLOR}"
-        mkdir -p "$BACKUP_DIR"
-        cp -r "$TARGET" "$BACKUP_DIR/"
-
-        echo -e "${GREEN}  -> Purging $TARGET...${NO_COLOR}"
-        rm -rf "$TARGET"
-    fi
-
-    # STOW EACH MODULE INTO THE HOME DIRECTORY (-t ~...)
-    mkdir "$TARGET"
-    echo -e "${GREEN}  -> Stowing $MODULE...${NO_COLOR}"
-    stow -v -R -t "$HOME/.config/$MODULE/" "$MODULE"
-done
+# INSTALL CORE/SUPPORTING PACKAGES, UNCOMMENT WHEN NEEDED
+#PACKAGES=(
+#    "git"
+#)
+#echo -e "\n${GREEN}Installing core packages...${NO_COLOR}"
+#sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
 
 echo -e "\n${BLUE}Provisioning Complete! Restart your session to see changes.${NO_COLOR}"
