@@ -11,3 +11,14 @@ Desktop.ini
 
 # DEBUG FILES
 *.log
+
+# PROJECT SPECIFIC DIRECTORIES
+mozilla
+obsidian
+pulse
+session
+
+# PROJECT SPECIFIC FILES
+user-dirs.dirs
+user-dirs.locale
+
