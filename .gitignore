@@ -13,6 +13,7 @@ Desktop.ini
 *.log
 
 # PROJECT SPECIFIC DIRECTORIES
+dconf
 mozilla
 obsidian
 pulse
