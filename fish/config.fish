@@ -21,7 +21,7 @@ if status is-login
             sleep 5
             echo;
 
-            read -l -P (set_color -o green)"Launch Hyprland? [y/N]: "(set_color normal) response
+            read -l -P (set_color -o green)"Would you like to launch Hyprland? [y/N]: "(set_color normal) response
             switch $response
                 case Y y
                     exec uwsm start hyprland-uwsm.desktop
