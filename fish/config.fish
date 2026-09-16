@@ -11,6 +11,7 @@ if status is-login
         if uwsm check may-start >/dev/null 2>&1
             # RUN FASTFETCH (OR CACHYOS'S DEFAULT GREETING)
             if functions -q fish_greeting
+                echo;
                 fish_greeting
                 set -g fish_greeting ""
             else
