@@ -14,12 +14,14 @@ if status is-login
                 fish_greeting
                 set -g fish_greeting ""
             else
+                echo;
                 fastfetch
             end
             
             sleep 5
+            echo;
 
-            read -l -P (set_color -o green)"\nLaunch Hyprland? [y/N]: "(set_color normal) response
+            read -l -P (set_color -o green)"Launch Hyprland? [y/N]: "(set_color normal) response
             switch $response
                 case Y y
                     exec uwsm start hyprland-uwsm.desktop
