@@ -72,5 +72,6 @@ sudo ./provisioner.sh
 
 ## External Credit
 
-If you know the author of any contained wallpaper images, please create an issue for *attribution*.
+This project melds against the CachyOS base configuration for `CachyOS-Hyprland-Noctalia` which can be found [here (gh/cachyos-hypr-noctalia)](https://github.com/CachyOS/cachyos-hypr-noctalia). Changes to the base configuration are monitored, compared, and merged accordingly.
 
+If you know the author of any contained wallpaper images, please open an issue for *attribution*.
