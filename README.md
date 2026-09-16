@@ -13,6 +13,8 @@ This repository contains my personal dotfiles for configuring my flavor of Arch 
 
 ![Screenshot](.github/assets/screenshot-01.png)
 
+![Screenshot](.github/assets/screenshot-02.png)
+
 <br/>
 
 ## Install
@@ -70,4 +72,5 @@ sudo ./provisioner.sh
 
 ## External Credit
 
-- Wallpaper is attributed to *hold for source*.
+If you know the author of any contained wallpaper images, please create an issue for *attribution*.
+

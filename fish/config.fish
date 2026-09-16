@@ -19,7 +19,7 @@ if status is-login
                 fastfetch
             end
             
-            sleep 5
+            sleep 3s
             echo;
 
             read -l -P (set_color -o green)"Would you like to launch Hyprland? [y/N]: "(set_color normal) response

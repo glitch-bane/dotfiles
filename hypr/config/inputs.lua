@@ -40,7 +40,7 @@ hl.gesture({
 hl.gesture({
     fingers = 4,
     direction = "up",
-    action = function() hl.exec_cmd("qs -c noctalia-shell ipc call launcher toggle") end
+    action = function() hl.exec_cmd("noctalia msg panel-toggle launcher") end
 })
 
 hl.gesture({
