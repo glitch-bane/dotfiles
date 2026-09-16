@@ -17,7 +17,7 @@ echo -e "░       ░░░░      ░░░        ░░        ░░      
 echo -e "▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
 echo -e "▓  ▓▓▓▓  ▓▓  ▓▓▓▓  ▓▓▓▓▓  ▓▓▓▓▓      ▓▓▓▓▓▓▓  ▓▓▓▓▓  ▓▓▓▓▓▓▓▓      ▓▓▓▓▓      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"
 echo -e "█  ████  ██  ████  █████  █████  ███████████  █████  ████████  ██████████████  █████████████████████"
-echo -e "█       ████      ██████  █████  ████████        ██        ██        ███      ██████████████████████${NO_COLOR}\n\n"
+echo -e "█       ████      ██████  █████  ████████        ██        ██        ███      ██████████████████████${NO_COLOR}\n"
 echo -e "${BLUE}Starting CachyOS / Hyprland Provisioning...${NO_COLOR}\n"
 
 # ASK FOR SUDO UPFRONT
@@ -35,4 +35,4 @@ PACKAGES=(
 echo -e "\n${GREEN}Installing core packages...${NO_COLOR}"
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
 
-echo -e "\n${BLUE}Provisioning Complete! Restart your session to see changes.${NO_COLOR}"
+echo -e "\n${BLUE}PROVISIONING COMPLETE!\nRestart your session to see any changes.${NO_COLOR}"
