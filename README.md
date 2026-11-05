@@ -4,6 +4,8 @@
 
 ## About
 
+> Last [Sync](https://github.com/CachyOS/cachyos-hypr-noctalia) Date: `20261012`
+
 This repository contains my personal dotfiles for configuring my flavor of Arch Linux. The setup uses Hyprland / Noctalia as the desktop environment (Wayland compositor) and is very minimal. My target machine is a `writer's terminal`, meaning very old hardware with the user's undistracted focus in mind. The goal of this configuration is to offer an easy and stylish provisioning agent for old thin-clients, which additionally utilizes bridge key-bindings/gestures similar to other operating systems.
 
 - Linux Distro: **Arch-based Distributions**, *CachyOS*

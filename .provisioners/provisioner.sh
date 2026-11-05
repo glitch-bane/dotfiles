@@ -27,7 +27,7 @@ sudo -v
 echo -e "${GREEN}Updating system packages...${NO_COLOR}"
 sudo pacman -Syu --noconfirm
 
-# INSTALL CORE/SUPPORTING PACKAGES, UNCOMMENT WHEN NEEDED
+# CYBERDECK SOFTWARE: INSTALL CORE/SUPPORTING PACKAGES
 PACKAGES=(
     "lazygit"
     "obsidian"
