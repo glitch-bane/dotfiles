@@ -29,13 +29,13 @@ if command -v snapper &>/dev/null && snapper list-configs &>/dev/null; then
     echo -e "${YELLOW}Creating automated pre-update Btrfs snapshot...${NO_COLOR}"
     sudo snapper create --description "Pre-update checkpoint $(date +%Y%m%d-%H%M%S)" --cleanup-algorithm "number"
 else
-    echo -e "${YELLOW}Note: Snapper not configured. Proceeding without auto-snapshot (consider setting up snapper if using Btrfs).${NO_COLOR}"
+    echo -e "${YELLOW}Note: Snapper not configured. Proceeding without auto-snapshot.${NO_COLOR}"
 fi
 
 # SAFE & IDEMPOTENT SYSTEM UPDATE
 echo -e "${GREEN}Optimizing mirrors...${NO_COLOR}"
 if command -v cachyos-rate-mirrors &>/dev/null; then
-    sudo cachyos-rate-mirrors || echo -e "${YELLOW}Mirror rating skipped due to network issue, using current mirrors.${NO_COLOR}"
+    sudo cachyos-rate-mirrors || echo -e "${YELLOW}Mirror rating skipped, using current mirrors.${NO_COLOR}"
 fi
 
 echo -e "${GREEN}Running system synchronization...${NO_COLOR}"
@@ -52,5 +52,8 @@ sudo pacman -S --needed "${PACKAGES[@]}"
 
 # ONE-OFF INSTALLERS
 curl -fsSL https://emeraldian-tui.github.io/install.sh | sh
+
+# CLEAR ANY PRE-EXISTING STATE OVERRIDES SO NOCTALIA BOOTS STRICTLY FROM ~/.config
+rm -f "$HOME/.local/state/noctalia/settings.toml"
 
 echo -e "\n${BLUE}PROVISIONING COMPLETE!\nEnvironment is up to date.${NO_COLOR}"
